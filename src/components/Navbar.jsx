@@ -6,7 +6,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinkClass = ({ isActive, isPending }) =>
-    isPending ? "" : isActive ? "underline underline-offset-2" : "";
+    isPending
+      ? "text-lg xl:text-xl"
+      : isActive
+        ? "underline underline-offset-2 text-lg xl:text-xl"
+        : "text-lg xl:text-xl";
 
   const links = [
     { to: "/portfolio", label: "Portfolio" },
@@ -17,17 +21,19 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 w-full z-100 shadow-xl">
       <div className="flex justify-between items-center h-27 md:h-23 px-5 md:px-11 bg-offwhite">
-        <div className="flex items-center">
-          <Link to="/" aria-label="Homepage" onClick={() => setMenuOpen(false)}>
+        <Link to="/" aria-label="Homepage" onClick={() => setMenuOpen(false)}>
+          <div className="flex items-center">
             <img
               src={woordlarkLogo}
               alt="Woodlark's Nest Logo"
               className="h-18"
               onClick={() => window.scrollTo(0, 0)}
             />
-          </Link>
-          <p className="ml-3"></p>
-        </div>
+            <p className="ml-4 hidden md:block font-playfair-display text-wood-brown text-xl xl:text-2xl font-semibold">
+              The Woodlark's Nest
+            </p>
+          </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav aria-label="Main Navigation" className="hidden md:block">
