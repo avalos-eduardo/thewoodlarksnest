@@ -225,8 +225,8 @@ export default function CustomPiece() {
           )}
 
           <p className="text-xl mb-3">Name</p>
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex flex-1 flex-col gap-2">
+          <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-1 flex-col gap-2 lg:pr-1">
               <label htmlFor="firstName">
                 First Name <span className="font-thin">(required)</span>
               </label>
@@ -242,7 +242,7 @@ export default function CustomPiece() {
                 required
               />
             </div>
-            <div className="flex flex-1 flex-col gap-2">
+            <div className="flex flex-1 flex-col gap-2 lg:pl-1 mt-2 lg:mt-0">
               <label htmlFor="lastName">
                 Last Name <span className="font-thin">(required)</span>
               </label>
