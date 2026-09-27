@@ -42,7 +42,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-      <ShareYourVision />
+      <ShareYourVision ctaLocation="portfolio_cta" />
     </>
   );
 }

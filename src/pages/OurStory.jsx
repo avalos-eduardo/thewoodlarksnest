@@ -81,7 +81,7 @@ export default function OurStory() {
         <OurStorySections header="Made With Care" paragraphs={paragraphThree} />
         <OurStorySections header="Thank You" paragraphs={paragraphFour} />
       </section>
-      <ShareYourVision />
+      <ShareYourVision ctaLocation="our_story_cta" />
     </>
   );
 }
