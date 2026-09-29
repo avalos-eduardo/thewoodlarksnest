@@ -23,7 +23,7 @@ export default function ShareYourVision(ctaLocation) {
       <Link
         to="/custom-piece"
         className="rounded-md w-65 lg:w-80 h-12 lg:h-18 flex justify-center items-center bg-offwhite text-wood-brown text-md lg:text-xl font-playfair-display font-bold tracking-wide "
-        onClick={handleContactClick(ctaLocation)}
+        onClick={() => handleContactClick(ctaLocation)}
       >
         Start Your Custom Piece
       </Link>

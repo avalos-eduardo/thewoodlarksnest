@@ -14,6 +14,9 @@ export default function Home() {
 
   const handleContactClick = (ctaLocation) => {
     window.scrollTo(0, 0);
+
+    console.log("SENDING CTA EVENT", location);
+
     trackEvent("cta_click", {
       cta_name: "start_a_custom_piece",
       cta_location: ctaLocation,
@@ -42,7 +45,7 @@ export default function Home() {
           <Link
             to="/custom-piece"
             className="bg-[#EDE8D8] text-[#503E2D] py-2 px-4 lg:py-4 lg:px-8 rounded-lg text-xl lg:text-2xl font-playfair-display font-semibold text-center cursor-pointer"
-            onClick={handleContactClick("homepage_hero")}
+            onClick={() => handleContactClick("homepage_hero")}
           >
             Start Your Custom Piece
           </Link>
@@ -145,7 +148,7 @@ export default function Home() {
               <Link
                 to="/custom-piece"
                 className="underline underline-offset-4 decoration-1"
-                onClick={handleContactClick("homepage_what_its_like")}
+                onClick={() => handleContactClick("homepage_what_its_like")}
               >
                 Reach out
               </Link>{" "}
@@ -304,7 +307,7 @@ export default function Home() {
           <Link
             to="/custom-piece"
             className="bg-[#EDE8D8] text-[#503E2D] py-2 px-4 lg:py-4 lg:px-8 rounded-lg text-xl lg:text-2xl font-playfair-display font-semibold text-center cursor-pointer"
-            onClick={handleContactClick("homepage_bring_your_ideas_home")}
+            onClick={() => handleContactClick("homepage_bring_your_ideas_home")}
           >
             Start Your Custom Piece
           </Link>
