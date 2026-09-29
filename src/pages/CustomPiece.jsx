@@ -1,6 +1,7 @@
 import FAQ from "../components/FAQ";
 import { useState } from "react";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import { trackEvent } from "../utils/zarazTrackEvent";
 
 export default function CustomPiece() {
   const [files, setFiles] = useState([]);
@@ -8,6 +9,7 @@ export default function CustomPiece() {
   const [formError, setFormError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [formStarted, setFormStarted] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -22,6 +24,16 @@ export default function CustomPiece() {
 
   const MAX_FILES = 5;
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+  const handleFormStart = () => {
+    if (formStarted) return;
+
+    setFormStarted(true);
+
+    trackEvent("form_start", {
+      form_name: "custom_piece_inquiry",
+    });
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -200,6 +212,7 @@ export default function CustomPiece() {
       <section className="h-auto py-15 lg:py-20 grid place-items-center">
         <form
           onSubmit={handleSubmit}
+          onChange={handleFormStart}
           className="flex flex-col bg-offwhite rounded-3xl w-[85vw] md:w-[55vw] p-8 md:p-10 lg:p-12 font-lato text-wood-brown"
         >
           {formError && (

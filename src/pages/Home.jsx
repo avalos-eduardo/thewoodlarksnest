@@ -15,8 +15,6 @@ export default function Home() {
   const handleContactClick = (ctaLocation) => {
     window.scrollTo(0, 0);
 
-    console.log("SENDING CTA EVENT", location);
-
     trackEvent("cta_click", {
       cta_name: "start_a_custom_piece",
       cta_location: ctaLocation,
