@@ -1,9 +1,25 @@
 import { useEffect, useState } from "react";
+import { trackEvent } from "../utils/zarazTrackEvent";
 
-export default function PortfolioPieceCard({ img, description, alt }) {
+export default function PortfolioPieceCard({
+  img,
+  description,
+  alt,
+  projectID,
+  projectType,
+  woodSpecies,
+}) {
   const [clicked, setClicked] = useState(false);
 
   const handleClickImg = () => {
+    if (!clicked) {
+      trackEvent("portfolio_view", {
+        project_id: projectID,
+        project_type: projectType,
+        wood_species: woodSpecies,
+      });
+    }
+
     setClicked(true);
   };
 

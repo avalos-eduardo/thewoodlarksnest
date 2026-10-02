@@ -21,11 +21,17 @@ export default function Portfolio() {
               img={missionStyleShoeBench}
               description="Mission Style Shoe Bench • White Oak"
               alt="Mission Style Shoe Bench • White Oak"
+              projectID="mission_style_shoe_bench"
+              projectType="shoe_bench"
+              woodSpecies="white_oak"
             />
             <PortfolioPieceCard
               img={shoeBench}
               description="Mission Style Shoe Bench • White Oak"
               alt="Mission Style Shoe Bench • White Oak"
+              projectID="mission_style_shoe_bench"
+              projectType="shoe_bench"
+              woodSpecies="white_oak"
             />
           </div>
           <div className="flex flex-col gap-2 md:gap-5">
@@ -33,11 +39,17 @@ export default function Portfolio() {
               img={diningTableImg}
               description="Mission Style Dining Table • White Oak"
               alt="Mission Style Dining Table • White Oak"
+              projectID="mission_style_dining_table"
+              projectType="dining_table"
+              woodSpecies="white_oak"
             />
             <PortfolioPieceCard
               img={toddlerTowerTwo}
               description="Toddler Tower • Cherry"
               alt="Toddler Tower • Cherry"
+              projectID="toddler_tower"
+              projectType="toddler_tower"
+              woodSpecies="cherry"
             />
           </div>
         </div>
